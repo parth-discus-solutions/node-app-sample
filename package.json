@@ -1,0 +1,22 @@
+{
+  "name": "node-app-sample",
+  "version": "1.0.0",
+  "description": "This is first node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/parth-discus-solutions/node-app-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parth-discus-solutions/node-app-sample/issues"
+  },
+  "homepage": "https://github.com/parth-discus-solutions/node-app-sample#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
