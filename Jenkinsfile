@@ -1,6 +1,5 @@
 pipeline{
     agent any
-
     
     stages{
         stage ("prod"){
@@ -8,7 +7,12 @@ pipeline{
                 branch "prod"
             }
             steps{
-                build 'test-prod'
+                sh '''
+                npm install 
+                cp -r * ~/prod/
+                cd ~/prod/
+                pm2 start index.js --name=prod
+                '''
             }
         }
         stage ("dev"){
@@ -16,9 +20,14 @@ pipeline{
                 branch "dev"
             }
             steps{
-                build 'test-dev'
+                sh '''
+                npm install 
+                cp -r * ~/staging/
+                cd ~/staging/
+                pm2 start index.js --name=staging
+                '''
             }
-        }
-        
+        }     
     }
 }
+
