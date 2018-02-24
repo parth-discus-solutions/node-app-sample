@@ -1,33 +1,13 @@
 pipeline{
-    agent any
-    
+    agent slave-1
     stages{
-        stage ("prod"){
-            when{
-                branch "prod"
-            }
-            steps{
-                sh '''
-                npm install 
-                cp -r * ~/prod/
-                cd ~/prod/
-                pm2 start index.js --name=prod
-                '''
-            }
+        stage('build'){
+            sh '''
+                npm install
+                npm start
+            '''
         }
-        stage ("dev"){
-            when{
-                branch "dev"
-            }
-            steps{
-                sh '''
-                npm install 
-                cp -r * ~/staging/
-                cd ~/staging/
-                pm2 start index.js --name=staging
-                '''
-            }
-        }     
     }
 }
-
+        
+   
