@@ -10,7 +10,7 @@ pipeline{
             sh '''
                 npm install
             '''
-            build(job: 'Ghost-suit-test', wait: true)
+            build(job: 'Ghost-suit-test', propagate: true)
             }
         }
     }
