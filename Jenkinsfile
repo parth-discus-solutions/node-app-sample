@@ -13,10 +13,10 @@ pipeline{
             '''
             }
         }
-        post {
-            failure {
+    }
+    post {
+        failure {
                 echo "fail"
             }
-        }
     }
 }
