@@ -16,7 +16,7 @@ pipeline{
         post {
             failure {
                 emailext {
-                    attachLog: true,
+                    attachLog: 'true',
                     body: '''$DEFAULT_CONTENT
                     test failed and rollback initiated''',
                     subject: '$DEFAULT_SUBJECT',
