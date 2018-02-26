@@ -11,6 +11,7 @@ pipeline{
                 npm install
                 curl -X POST http://54.245.21.118:8080/job/front-end/job/ghost-suit-fail-test/build --user admin:16726431fadf74c789dfb952c411aa42
             '''
+            build(job: 'Ghost-suit-test', wait: true)
             }
         }
     }
