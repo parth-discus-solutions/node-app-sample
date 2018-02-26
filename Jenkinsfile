@@ -10,7 +10,7 @@ pipeline{
             sh '''
                 npm install
             '''
-            build 'ghost'
+            build 'ghost-fail'
             }
         }
     }
