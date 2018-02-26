@@ -15,8 +15,7 @@ pipeline{
         }
         post {
             failure {
-                emailext {
-                    echo "fail"
+                echo "fail"
             }
         }
     }
